@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+}
+
+.night {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    direction: rtl;
+    margin: 5px 0;
+}
+
+select:focus,
+input[type="text"]:focus {
+    border-color: #555;
+    outline: none;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5); /* Added box-shadow on focus */
+}
+
+select {
+    width: 20%;
+    cursor: pointer;
+    margin-right: 5px;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    white-space: nowrap;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.cell-stock {
+    background-color: #d4edda;
+    font-weight: bold;
+}
+
+.cell-low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+
+.cell-out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+.night .cell-stock {
+    background-color: #2e7d32;
+    font-weight: bold;
+}
+
+.night .cell-low-stock {
+    background-color: #ffeb3b;
+    color: #7a7a00;
+    font-weight: bold;
+}
+
+.night .cell-out-of-stock {
+    background-color: #c62828;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-table td {
+    padding: 12px;
+    border: none;
+    text-align: right;
+}
+
+.info-table td span {
+    font-weight: bold;
+}
+
+.toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    background: none;
+}
+
+.toggle-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.night .toggle-button, .night .scroll-to-top {
+    fill: white;
+}
+
+.toggle-button:hover {
+    transform: scale(1.1);
+}
+
+.night #excel-table th {
+    background-color: #9b9b9b;
+    color: white;
+}
+
+.night #excel-table td {
+    color: white;
+}
+
+#excel-table {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+    max-height: 400px;
+}
+
+.night #excel-table {
+    background-color: #333;
+}
+
+#excel-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    z-index: 10;
+}
+
+#excel-table td:nth-child(6),
+#excel-table td:nth-child(8) {
+    font-size: 50%;
+}
+
+#excel-table td:nth-child(6):hover,
+#excel-table td:nth-child(8):hover {
+    font-size: 80%;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    transition: transform 0.3s;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}

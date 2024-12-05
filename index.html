@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه مایکروسافت</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link el="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="Products" class="tabcontent">
+            <div class="search-container">
+                <select id="search-column" aria-label="انتخاب ستون جستجو">
+                    <option value="0">اسم محصول</option>
+                    <option value="1">مدل</option>
+                    <option value="2">توضیحات</option>
+                    <option value="3">قیمت</option>
+                    <option value="4">قیمت خرید</option>
+                    <option value="5">تعداد مانده</option>
+                    <option value="6">سود</option>
+                </select>
+                <input type="text" id="search-input" placeholder="جستجو..." onkeyup="searchTable()" aria-label="جستجو در جدول">
+            </div>
+            <table id="excel-table" aria-label="جدول محصولات">
+                <thead>
+                    <tr>
+                        <th>ردیف</th>
+                        <th>اسم محصول</th>
+                        <th>مدل</th>
+                        <th>توضیحات</th>
+                        <th>قیمت</th>
+                        <th>قیمت خرید</th>
+                        <th>تعداد مانده</th>
+                        <th>سود</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <!--
+    <div class="container">
+        <div id="Products-Information" class="tabcontent">
+            <table class="info-table" aria-label="اطلاعات کلی محصولات">
+                <tr>
+                    <td><span id="total-profit-words"></span></td>
+                    <td><span id="total-profit"></span></td>
+                    <td>جمع کل سود‌های محصولات</td>
+                </tr>
+                <tr>
+                    <td><span id="total-mult-words"></span></td>
+                    <td><span id="total-mult"></span></td>
+                    <td>جمع کل ضرب سود و تعداد</td>
+                </tr>
+                <tr>
+                    <td><span id="total-diff-words"></span></td>
+                    <td><span id="total-diff"></span></td>
+                    <td>جمع کل تفریق قیمت خرید با فروش</td>
+                </tr>
+                <tr>
+                    <td><span id="total-products-words"></span></td>
+                    <td><span id="total-products"></span></td>
+                    <td>تعداد کل محصولات</td>
+                </tr>
+            </table>
+        </div>
+    </div> 
+    -->
+    <!--
+    <button id="scrollToTop" class="scroll-to-top" style="display: none;" aria-label="بازگشت به بالا">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+            <path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm4.361,12h-3.361v5c0,.552-.448,1-1,1s-1-.448-1-1v-5h-3.361c-.695,0-1.044-.852-.552-1.35l4.361-4.418c.305-.309,.799-.309,1.104,0l4.361,4.418c.492,.498,.143,1.35-.552,1.35Z"/>
+        </svg>
+    </button>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahmoud-eskandari/NumToPersian/dist/num2persian-min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
