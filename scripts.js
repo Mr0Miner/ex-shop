@@ -1,4 +1,4 @@
-let filePath = "shop list.xlsx";
+let filePath = "../shop list.xlsx";
 
 document.addEventListener('DOMContentLoaded', function () {
     // تنظیم حالت پیشفرض به روز

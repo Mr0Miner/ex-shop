@@ -54,6 +54,13 @@ select:focus,
 input[type="text"]:focus {
     border-color: #555;
     outline: none;
+    box-shadow: 0 0 5px rgba(185, 185, 185, 0.5);
+}
+
+.night select:focus,
+.night input[type="text"]:focus {
+    border-color: #555;
+    outline: none;
     box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
 }
 
@@ -62,10 +69,6 @@ select {
     cursor: pointer;
     margin-right: 5px;
     font-family: 'Vazirmatn', sans-serif;
-}
-
-select:hover {
-    border-color: #888;
 }
 
 table {
