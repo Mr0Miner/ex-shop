@@ -8,12 +8,13 @@
 body {
     background-color: #f0f0f0;
     color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.3s ease;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 20px;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
@@ -21,8 +22,9 @@ body {
 }
 
 .night {
-    background-color: #121212;
+    background-color: #212121;
     color: #e0e0e0;
+    border-color: #696969;
 }
 
 hr {
@@ -52,7 +54,7 @@ select:focus,
 input[type="text"]:focus {
     border-color: #555;
     outline: none;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5); /* Added box-shadow on focus */
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
 }
 
 select {
@@ -67,7 +69,7 @@ select:hover {
 }
 
 table {
-    width: 100%;
+    width: 20%;
     border-collapse: collapse;
     margin-top: 10px;
 }
@@ -76,6 +78,7 @@ th, td {
     padding: 15px;
     text-align: center;
     border: 1px solid #ddd;
+    width: 100px;
 }
 
 th {
@@ -86,6 +89,52 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+.night tr:nth-child(even) {
+    background-color: #3b3b3b;
+}
+.night #excel-table th {
+    background-color: #393939;
+    color: white;
+    border-color: #696969;
+}
+
+.night #excel-table td {
+    color: white;
+}
+
+#excel-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    table-layout: fixed;
+    position: relative;
+    overflow: auto;
+    max-height: 400px;
+}
+
+.night #excel-table {
+    background-color: #333;
+}
+
+#excel-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    z-index: 10;
+}
+
+#excel-table td:nth-child(6),
+#excel-table td:nth-child(8) {
+    font-size: 50%;
+}
+
+#excel-table td:nth-child(6):hover,
+#excel-table td:nth-child(8):hover {
+    font-size: 80%;
+}
+
 
 .cell-stock {
     background-color: #d4edda;
@@ -105,18 +154,18 @@ tr:nth-child(even) {
 }
 
 .night .cell-stock {
-    background-color: #2e7d32;
+    background-color: #062f00;
     font-weight: bold;
 }
 
 .night .cell-low-stock {
-    background-color: #ffeb3b;
+    background-color: #ac9e09;
     color: #7a7a00;
     font-weight: bold;
 }
 
 .night .cell-out-of-stock {
-    background-color: #c62828;
+    background-color: #8B0000;
     color: #ffffff;
     font-weight: bold;
 }
@@ -148,9 +197,14 @@ tr:nth-child(even) {
 }
 
 .toggle-button img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 }
+
+.night .toggle-button img {
+    filter: invert(1); /* تغییر رنگ به سفید */
+}
+
 
 .night .toggle-button, .night .scroll-to-top {
     fill: white;
@@ -158,44 +212,6 @@ tr:nth-child(even) {
 
 .toggle-button:hover {
     transform: scale(1.1);
-}
-
-.night #excel-table th {
-    background-color: #9b9b9b;
-    color: white;
-}
-
-.night #excel-table td {
-    color: white;
-}
-
-#excel-table {
-    border-collapse: collapse;
-    width: 100%;
-    position: relative;
-    overflow: auto;
-    max-height: 400px;
-}
-
-.night #excel-table {
-    background-color: #333;
-}
-
-#excel-table thead {
-    position: sticky;
-    top: 0;
-    background-color: #f4f4f4;
-    z-index: 10;
-}
-
-#excel-table td:nth-child(6),
-#excel-table td:nth-child(8) {
-    font-size: 50%;
-}
-
-#excel-table td:nth-child(6):hover,
-#excel-table td:nth-child(8):hover {
-    font-size: 80%;
 }
 
 .scroll-to-top {

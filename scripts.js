@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // اضافه کردن دکمه تغییر حالت
     const toggleButton = document.createElement('button');
     toggleButton.className = 'toggle-button';
-    toggleButton.title = "تغییر حالت روز/شب"; // Tooltip برای دکمه
 
     const dayIcon = '<img src="img/dayandnight.svg" alt="">';
     const nightIcon = '<img src="img/dayandnight.svg" alt="">';
@@ -44,27 +43,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 let totals = { profit: 0, products: 0, mult: 0, diff: 0 };
                 const rows = [];
 
-                workbook.SheetNames.forEach(sheetName => {
-                    const sheet = workbook.Sheets[sheetName];
-                    console.log(sheet['E363'], sheet['F363'], sheet['G363'], sheet['H363']);
-                    
-                    totals.profit += sheet['E363'] ? sheet['E363'].v : 0;
-                    totals.products += sheet['F363'] ? sheet['F363'].v : 0;
-                    totals.mult += sheet['G363'] ? sheet['G363'].v : 0;
-                    totals.diff += sheet['H363'] ? sheet['H363'].v : 0;
+                const sheet = workbook.Sheets[workbook.SheetNames[0]]; // فقط شیت اول
+                console.log(sheet['E363'], sheet['F363'], sheet['G363'], sheet['H363']);
+                
+                totals.profit += sheet['E363'] ? sheet['E363'].v : 0;
+                totals.products += sheet['F363'] ? sheet['F363'].v : 0;
+                totals.mult += sheet['G363'] ? sheet['G363'].v : 0;
+                totals.diff += sheet['H363'] ? sheet['H363'].v : 0;
 
-                    const range = XLSX.utils.decode_range(sheet['!ref']);
-                    for (let R = range.s.r; R <= range.e.r; ++R) {
-                        const row = [];
-                        for (let C = range.s.c; C <= range.e.c; ++C) {
-                            const cell_address = { c: C, r: R };
-                            const cell_ref = XLSX.utils.encode_cell(cell_address);
-                            const cell = sheet[cell_ref];
-                            row.push(cell ? cell.v : "");
-                        }
-                        rows.push(row);
+                const range = XLSX.utils.decode_range(sheet['!ref']);
+                for (let R = range.s.r; R <= Math.min(range.e.r, 361); ++R) { // محدودیت به ردیف 361
+                    const row = [];
+                    for (let C = range.s.c; C <= range.e.c; ++C) {
+                        const cell_address = { c: C, r: R };
+                        const cell_ref = XLSX.utils.encode_cell(cell_address);
+                        const cell = sheet[cell_ref];
+                        row.push(cell ? cell.v : "");
                     }
-                });
+                    rows.push(row);
+                }
 
                 displayTable(rows);
                 updateTotals(totals);
